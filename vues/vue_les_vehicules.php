@@ -1,0 +1,48 @@
+</br>
+<h4> Liste des Véhicules </h4>
+
+<form method="post" action="">
+Mot de recherche :
+<input type="text" name="mot" >
+<input type="submit" name="Rechercher" value="Rechercher">
+</form>
+</br>   
+
+<table class="table table-hover table-striped table-dark" border="1">    
+    <tr>
+        <td> Idvehicule</td>
+        <td> Matricule vehicule</td>
+        <td> Marque vehicule</td>
+        <td> Date circulation</td>
+        <td> NB KM</td>
+        <td> Id Client</td>
+        <td> Opérations</td>
+    </tr>
+    <?php
+    foreach ($lesVehicules as $unVehicule) 
+    {
+        echo "<tr>";
+        echo "<td>".$unVehicule['idvehicule']."</td>";
+        echo "<td>".$unVehicule['matricule']."</td>";
+        echo "<td>".$unVehicule['marque']."</td>";
+        echo "<td>".$unVehicule['datecirculation']."</td>";
+        echo "<td>".$unVehicule['nbkm']."</td>";
+        echo "<td>".$unVehicule['idclient']."</td>";
+        echo"<td>";
+        if (isset($_SESSION['email']) and $_SESSION['role']=="admin")
+        {
+        echo "<a href='index.php?page=2&action=sup&idvehicule=".$unVehicule['idvehicule']."'>";
+        echo "<img src = 'images/sup.jpeg' height='30' width='30'>";
+        echo "</a>";
+
+        echo "<a href='index.php?page=2&action=edit&idvehicule=".$unVehicule['idvehicule']."'>";
+        echo "<img src = 'images/edit.png' height='30' width='30'>";
+        echo "</a>";
+        }
+        echo "</td>";
+
+        echo "</tr>";
+    }
+
+    ?>
+</table>

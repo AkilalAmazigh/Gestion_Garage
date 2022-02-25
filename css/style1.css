@@ -1,0 +1,49 @@
+body
+{
+    background: url(../images/background.jpg);
+    background-size: cover;
+    color: aliceblue;
+}
+.navbar 
+{
+  justify-content: space-evenly;
+  width: 350px;
+
+}
+
+h1 
+{
+    color: gold;
+    animation: titre ease 2s;
+}
+    @keyframes titre 
+    {
+      0% 
+      {
+        opacity: 0;
+        transform: translateY(350px);
+      }
+      100% 
+      {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
+.table, .table-striped, .table-dark
+{
+   width: 40%;
+}
+
+.btn
+{
+    width: 100px;
+    height: 25px;
+    border-radius: 13px;
+    padding-top: 0px;
+}
+
+.bg-dark p
+{
+   font-size: 0.8em;
+}  
